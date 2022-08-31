@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter ,Route,Routes} from "react-router-dom";
+import MyClassCom from './Component/ClassCom'
+import MyFunCom from './Component/FunCom'
 import './App.css';
+import Home from "./Home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <>
+
+ <BrowserRouter>
+ <Routes>
+ <Route exact path='/' element={<Home />} />
+ <Route exact path='/Function' element={<MyFunCom />} />
+ <Route exact path='/class' element={<MyClassCom />} />
+
+
+
+
+
+ </Routes>
+
+
+
+ </BrowserRouter>
+
+
+ </>
   );
 }
 
